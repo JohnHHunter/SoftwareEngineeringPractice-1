@@ -35,6 +35,14 @@ public class BankAccount {
     }
 
 
+    /**
+     * Returns true if
+     * 1.) email contains one and only one @ but doesn't start with it
+     * 2.) email has a dot after the @ symbol
+     * 3.) 2 or 3 letters come after the last .
+     * @param email
+     * @return
+     */
     public static boolean isEmailValid(String email){
         if (email.indexOf('@') == -1){
             return false;
