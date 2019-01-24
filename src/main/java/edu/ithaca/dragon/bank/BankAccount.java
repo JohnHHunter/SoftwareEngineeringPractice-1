@@ -41,7 +41,6 @@ public class BankAccount {
 
     }
 
-
     /**
      * Returns true if
      * 1.) email contains one and only one @ but doesn't start with it
@@ -58,5 +57,14 @@ public class BankAccount {
         else {
             return false;
         }
+    }
+
+    /**
+     * Checks to see if amount is valid
+     * @param amount
+     * @return true if the amount is positive and has two decimal points or less
+     */
+    public static boolean isAmountValid(double amount) {
+        return false;
     }
 }

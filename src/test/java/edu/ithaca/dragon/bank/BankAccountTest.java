@@ -8,9 +8,11 @@ class BankAccountTest {
 
     @Test
     void getBalanceTest() {
-        BankAccount bankAccount = new BankAccount("a@b.com", 200);
+        BankAccount bankAccount1 = new BankAccount("a@b.com", 200);
+        assertEquals(200, bankAccount1.getBalance());
 
-        assertEquals(200, bankAccount.getBalance());
+        BankAccount bankAccount2 = new BankAccount("a@b.com", 150.75);
+        assertEquals(150.75, bankAccount2.getBalance());
     }
 
     @Test
@@ -23,8 +25,8 @@ class BankAccountTest {
         assertThrows(IllegalArgumentException.class, ()-> bankAccount.withdraw(-100));
         assertThrows(IllegalArgumentException.class, ()-> bankAccount.withdraw(200));
 
-        bankAccount.withdraw(100);
-        assertEquals(0, bankAccount.getBalance());
+        bankAccount.withdraw(99.50);
+        assertEquals(0.50, bankAccount.getBalance());
     }
 
     @Test
@@ -40,6 +42,16 @@ class BankAccountTest {
         assertFalse(BankAccount.isEmailValid("a@b.c"));
         assertFalse(BankAccount.isEmailValid("a@b.comm"));
         assertFalse(BankAccount.isEmailValid("a$@b.com"));
+    }
+
+    @Test
+    void isAmountValidTest() {
+        assertTrue(BankAccount.isAmountValid(200));
+        assertTrue(BankAccount.isAmountValid((200.1)));
+        assertTrue(BankAccount.isAmountValid((200.20)));
+
+        assertFalse(BankAccount.isAmountValid(-200));
+        assertFalse(BankAccount.isAmountValid(200.123));
     }
 
     @Test
