@@ -33,7 +33,12 @@ public class BankAccount {
      * @throws IllegalArgumentException if amount is greater than balance or negative
      */
     public void withdraw (double amount)  {
-        balance -= amount;
+        if (amount < 0 || amount > balance) {
+            throw new IllegalArgumentException("Amount is invalid, cannot withdraw funds");
+        } else {
+            balance -= amount;
+        }
+
     }
 
 
