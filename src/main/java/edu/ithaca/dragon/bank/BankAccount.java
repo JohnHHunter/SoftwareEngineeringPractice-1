@@ -27,11 +27,13 @@ public class BankAccount {
     }
 
     /**
+     * Used to withdraw money from the account's balance
+     * @param amount the amount to withdraw
      * @post reduces the balance by amount if amount is non-negative and smaller than balance
+     * @throws IllegalArgumentException if amount is greater than balance or negative
      */
     public void withdraw (double amount)  {
         balance -= amount;
-
     }
 
 
@@ -41,8 +43,8 @@ public class BankAccount {
      * 2.) email has a dot after the @ symbol
      * 3.) 2 or 3 letters in the domain name
      * 4.) email body only contains alphanumeric characters and "."s
-     * @param email
-     * @return
+     * @param email string to check
+     * @return true if matches the pattern
      */
     public static boolean isEmailValid(String email){
         if (email.matches("[a-zA-Z0-9.]+@[a-zA-Z0-9.]+\\.[a-z]{2,3}$")) {
