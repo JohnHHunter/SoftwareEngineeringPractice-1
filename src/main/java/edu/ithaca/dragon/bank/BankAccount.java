@@ -71,7 +71,7 @@ public class BankAccount {
      */
     public static boolean isAmountValid(double amount) {
         String amountString = Double.toString(Math.abs(amount));
-        if (amount > 0 && amountString.matches("[0-9]+\\.?[0-9]{0,2}")) {
+        if (amount >= 0 && amountString.matches("[0-9]+\\.?[0-9]{0,2}")) {
             return true;
         } else {
             return false;
