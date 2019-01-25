@@ -54,7 +54,7 @@ public class BankAccount {
      * @return true if matches the pattern
      */
     public static boolean isEmailValid(String email){
-        if (email.matches("[a-zA-Z0-9.]+@[a-zA-Z0-9.]+\\.[a-z]{2,3}$")) {
+        if (email != null && email.matches("[a-zA-Z0-9.]+@[a-zA-Z0-9.]+\\.[a-z]{2,3}$")) {
             return true;
         }
         else {
