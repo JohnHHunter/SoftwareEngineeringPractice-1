@@ -50,6 +50,7 @@ public class BankAccount {
      * 2.) email has a dot after the @ symbol
      * 3.) 2 or 3 letters in the domain name
      * 4.) email body only contains alphanumeric characters and "."s
+     * 5.) email is not null
      * @param email string to check
      * @return true if matches the pattern
      */
